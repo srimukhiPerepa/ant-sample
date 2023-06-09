@@ -21,5 +21,5 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
 
-- publish: ant-sample.jar
+- publish: build/jar/ant-sample.jar
   artifact: my-test-pkg1
