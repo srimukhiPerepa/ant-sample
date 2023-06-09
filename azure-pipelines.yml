@@ -11,7 +11,7 @@ pool:
 
 steps:
 - publish: $(Build.ArtifactStagingDirectory)
-  artifact: my-test-pkg
+  artifact: my-first-package
 
 - task: Ant@1
   inputs:
