@@ -4,7 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - Artifacts/*
 
 pool:
   vmImage: ubuntu-latest
@@ -21,8 +26,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: 'my-first-package'
-    path: '$(Pipeline.Workspace)/Artifacts'
