@@ -9,13 +9,12 @@ trigger:
       - master
   paths:
     include:
-      - Artifacts/*
+      - path/to/artifact/my-first-package
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-
 - task: Ant@1
   inputs:
     workingDirectory: ''
