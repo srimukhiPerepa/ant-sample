@@ -29,5 +29,5 @@ steps:
   inputs:
     command: 'publish'
     publishDirectory: 'build/jar/ant-sample.jar'
-    vstsFeedPublish: 'FeedOrg'
+    vstsFeedPublish: 'AzureFeedTest'
     vstsFeedPackagePublish: 'build_Ant_Package'
