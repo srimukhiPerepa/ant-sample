@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- publish: $(Build.ArtifactStagingDirectory)
+  artifact: my-test-pkg
+
 - task: Ant@1
   inputs:
     workingDirectory: ''
