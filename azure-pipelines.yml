@@ -22,7 +22,7 @@ steps:
 - script: echo $(env)
 
 - publish: build/jar/ant-sample.jar
-  artifact: my-test-pkg2
+  artifact: my-test-pkg3
 
 - task: UniversalPackages@0
   displayName: 'Publish Artifact: build_ant_JarFile'
