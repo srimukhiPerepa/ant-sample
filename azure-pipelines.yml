@@ -21,10 +21,5 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '/home/vsts/work/1/s/build/jar/ant-sample.jar'
-    Contents: 'ant-sample.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-    CleanTargetFolder: true
-
+- publish: ant-sample.jar
+  artifact: my-test-pkg1
