@@ -24,7 +24,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Artifact to Artifact Folder'
   inputs:
-    SourceFolder: 'path/to/ant-sample.jar'
+    SourceFolder: 'build/jar/ant-sample.jar'
     Contents: 'ant-sample.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
