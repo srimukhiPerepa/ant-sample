@@ -23,3 +23,9 @@ steps:
 
 - publish: build/jar/ant-sample.jar
   artifact: my-test-pkg1
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: JarFile'
+  inputs:
+    PathtoPublish: 'build/jar/ant-sample.jar'
+    ArtifactName: 'AntJarFile'
