@@ -22,9 +22,9 @@ steps:
 - script: echo $(env)
 
 - task: CopyFiles@2
-  displayName: 'Copy Artifact to Artifact Folder'
   inputs:
-    SourceFolder: 'build/jar/ant-sample.jar'
+    SourceFolder: '/home/vsts/work/1/s/build/jar/ant-sample.jar'
     Contents: 'ant-sample.jar'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
 
