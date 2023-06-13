@@ -28,7 +28,13 @@ steps:
   displayName: 'Publish Artifact: build_ant_JarFile'
   inputs:
     command: 'publish'
-    publishDirectory: 'build/jar/ant-sample.jar'
+    publishDirectory: ''
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'AzureFeedTest'
-    vstsFeedPackagePublish: 'build_Ant_Package'
+    vstsFeedPackagePublish: 'build_Ant_Package' 
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'build/jar/ant-sample' 
+    ArtifactName: 'AntSample'
+    publishLocation: 'Container'
