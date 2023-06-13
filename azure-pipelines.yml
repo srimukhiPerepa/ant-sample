@@ -20,21 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
-
-- publish: build/jar/ant-sample.jar
-  artifact: ant-sample_Artifact
-
-- task: UniversalPackages@0
-  displayName: 'Publish Artifact: build_ant_JarFile'
-  inputs:
-    command: 'publish'
-    publishDirectory: ''
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'AzureFeedTest'
-    vstsFeedPackagePublish: 'build_Ant_Package' 
-
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'build/jar/ant-sample' 
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'AntSample'
     publishLocation: 'Container'
