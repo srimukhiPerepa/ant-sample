@@ -20,8 +20,13 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
-- task: PublishPipelineArtifact@1
+- task: UniversalPackages@0
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'antSample1'
-    publishLocation: 'pipeline'
+    command: 'publish'
+    publishDirectory: 'build/jar/ant-sample.jar'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '56c4f2bc-72e5-4726-9c73-93d131c5ec68/95a6239b-2e91-460c-9924-09d4f5e83809'
+    vstsFeedPackagePublish: 'postman-collection'
+    versionOption: 'patch'
+
+    
