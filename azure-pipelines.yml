@@ -28,5 +28,6 @@ steps:
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'helloWorld/AzureFeedTest'
     vstsFeedPackagePublish: '$(packageName)'
-    vstsPackageVersion: '1.0.0'
+    versionOption: 'custom'
+    versionPublish: '$(packageVersion)'
     packagePublishDescription: 'using artifact Staging directory'
