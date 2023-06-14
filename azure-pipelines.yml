@@ -29,7 +29,7 @@ steps:
     command: 'publish'
     publishDirectory: '$(System.DefaultWorkingDirectory)/build/jar/ant-sample.jar'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'AzureFeedTest'
+    vstsFeedPublish: 'helloWorld/AzureFeedTest'
     vstsFeedPackagePublish: 'postman-collection'
     versionOption: 'patch'
     packagePublishDescription: 'using artifact Staging directory'
