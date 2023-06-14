@@ -27,9 +27,9 @@ steps:
 
 - task: UniversalPackages@0
   inputs:
-    command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'helloWorld/AzureFeedTest'
-    vstsFeedPackagePublish: 'postman-collection'
-    versionOption: 'patch'
+      command: 'publish'
+      publishDirectory: '$(Build.ArtifactStagingDirectory)/build/jar/ant-sample.jar'
+      feedsToUsePublish: 'internal'
+      vstsFeedPublish: '$(feedName)'
+      vstsFeedPackagePublish: '$(packageName)'
+      vstsPackageVersion: '$(packageVersion)'
