@@ -1,4 +1,5 @@
 # Ant
+
 # Build your Java projects and run tests with Apache Ant.
 # Add steps that save build artifacts and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -28,5 +29,14 @@ steps:
     vstsFeedPublish: '56c4f2bc-72e5-4726-9c73-93d131c5ec68/95a6239b-2e91-460c-9924-09d4f5e83809'
     vstsFeedPackagePublish: 'postman-collection'
     versionOption: 'patch'
+    
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
+      
+      echo $(Build.BuildId)
 
     
