@@ -22,20 +22,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
 
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Hello world
-      
-      echo $(Build.BuildId)
-
 - task: UniversalPackages@0
   inputs:
       command: 'publish'
       publishDirectory: '$(Build.ArtifactStagingDirectory)/build/jar/ant-sample.jar'
       feedsToUsePublish: 'internal'
-      vstsFeedPublish: '2921c579-a8e5-4fb0-8d08-821598d62868'
-      vstsFeedPackagePublish: 'my-first-package'
-      vstsPackageVersion: '1.0.3'
+      vstsFeedPublish: '$(feedName)'
+      vstsFeedPackagePublish: '$(packageName)'
+      vstsPackageVersion: '$(packageVersion)'
