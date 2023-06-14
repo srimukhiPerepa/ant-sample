@@ -10,9 +10,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-- group : feedDetails
-
 steps:
 - task: Ant@1
   inputs:
