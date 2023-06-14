@@ -23,11 +23,11 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-- script: echo $(env) echo $(System.DefaultWorkingDirectory)
+    
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)/build/jar/ant-sample.jar'
+    publishDirectory: '$(System.DefaultWorkingDirectory)/build/jar/ant-sample.jar'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '56c4f2bc-72e5-4726-9c73-93d131c5ec68/95a6239b-2e91-460c-9924-09d4f5e83809'
     vstsFeedPackagePublish: 'postman-collection'
