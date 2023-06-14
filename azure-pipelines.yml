@@ -21,15 +21,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 - script: echo $(env)
-- task: UniversalPackages@0
-  inputs:
-    command: 'publish'
-    publishDirectory: 'build/jar/ant-sample.jar'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: '56c4f2bc-72e5-4726-9c73-93d131c5ec68/95a6239b-2e91-460c-9924-09d4f5e83809'
-    vstsFeedPackagePublish: 'postman-collection'
-    versionOption: 'patch'
-    
+
 - task: CmdLine@2
   inputs:
     script: |
@@ -38,5 +30,13 @@ steps:
       echo Hello world
       
       echo $(Build.BuildId)
-
+  
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: :'$(Build.ArtifactStagingDirectory)/'build/jar/ant-sample.jar'
+    feedsToUse: 'internal'
+    vstsFeedPublish: 'AzureFeedTest'
+    vstsFeedPackagePublish: 'postman-collection'
+    vstsPackageVersion: '1.0.3'
     
