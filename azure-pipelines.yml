@@ -21,6 +21,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     
+
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
@@ -30,4 +31,4 @@ steps:
     vstsFeedPackagePublish: '$(packageName)'
     versionOption: 'custom'
     versionPublish: '$(packageVersion)'
-    packagePublishDescription: 'using artifact Staging directory'
+    packagePublishDescription: 'dummy test'
