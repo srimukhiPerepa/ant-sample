@@ -26,14 +26,12 @@ steps:
       echo $(packageName)
       
       echo $(packageVersion)
-
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: '$(System.DefaultWorkingDirectory)/build/jar/ant-sample.jar'
+    publishDirectory: 'build/jar/ant-sample.jar'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'helloWorld/AzureFeedTest'
-    vstsFeedPackagePublish: 'customPkg'
+    vstsFeedPublish: '56c4f2bc-72e5-4726-9c73-93d131c5ec68/95a6239b-2e91-460c-9924-09d4f5e83809'
+    vstsFeedPackagePublish: 'dummypackage'
     versionOption: 'custom'
-    versionPublish: '2.0.0'
-    packagePublishDescription: 'dummy test'
+    versionPublish: '2.0.1'
