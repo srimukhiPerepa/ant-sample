@@ -20,7 +20,12 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo $(packageName)
+      
+      echo $(packageVersion)
 
 - task: UniversalPackages@0
   inputs:
@@ -28,7 +33,7 @@ steps:
     publishDirectory: '$(System.DefaultWorkingDirectory)/build/jar/ant-sample.jar'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'helloWorld/AzureFeedTest'
-    vstsFeedPackagePublish: '$(packageName)'
+    vstsFeedPackagePublish: 'customPkg'
     versionOption: 'custom'
-    versionPublish: '$(packageVersion)'
+    versionPublish: '2.0.0'
     packagePublishDescription: 'dummy test'
