@@ -29,9 +29,9 @@ steps:
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: 'build/jar/ant-sample.jar'
+    publishDirectory: '$(System.DefaultWorkingDirectory)/build/jar/ant-sample.jar'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'helloWorld/AzureFeedTest'
     vstsFeedPackagePublish: 'dummypackage'
     versionOption: 'custom'
-    versionPublish: '2.0.1'
+    versionPublish: '2.0.2'
