@@ -26,6 +26,7 @@ steps:
   inputs:
     script: |
       echo $(packageName)
+      
       echo $(branchName)
       echo $(packageVersion)
 - task: UniversalPackages@0
