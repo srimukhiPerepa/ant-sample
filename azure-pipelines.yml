@@ -28,6 +28,7 @@ steps:
       echo $(packageName)
       echo $(branchName)
       echo $(packageVersion)
+      echo $(newVar)
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
